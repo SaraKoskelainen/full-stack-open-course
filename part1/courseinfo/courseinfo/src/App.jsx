@@ -6,11 +6,21 @@ const Content = (props) => {
   return (
     <>
       {Object.values(props.parts).map((part, idx) => (
-        <p key={idx}>
-          {part.partName} {part.exercises}
-        </p>
+        <Part
+          key={idx} // Each child in a list should have a unique "key" prop.
+          name={part.partName}
+          exercises={part.exercises}
+        />
       ))}
     </>
+  );
+};
+
+const Part = (props) => {
+  return (
+    <p>
+      {props.name} {props.exercises}
+    </p>
   );
 };
 
