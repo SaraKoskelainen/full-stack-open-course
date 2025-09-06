@@ -66,7 +66,7 @@ const App = () => {
 };
 
 const Statistics = ({ good, neutral, bad, all, avg, positivePercentage }) => {
-  const StatsContent = ({ text, value, unit = "" }) => (
+  const StatisticLine = ({ text, value, unit = "" }) => (
     <p>
       {text} {value} {unit}
     </p>
@@ -86,12 +86,12 @@ const Statistics = ({ good, neutral, bad, all, avg, positivePercentage }) => {
   return (
     <>
       <StatsHeader />
-      <StatsContent text={"good"} value={good} />
-      <StatsContent text={"neutral"} value={neutral} />
-      <StatsContent text={"bad"} value={bad} />
-      <StatsContent text={"all"} value={all} />
-      <StatsContent text={"average"} value={avg} />
-      <StatsContent text={"positive"} value={positivePercentage} unit={"%"} />
+      <StatisticLine text={"good"} value={good} />
+      <StatisticLine text={"neutral"} value={neutral} />
+      <StatisticLine text={"bad"} value={bad} />
+      <StatisticLine text={"all"} value={all} />
+      <StatisticLine text={"average"} value={avg} />
+      <StatisticLine text={"positive"} value={positivePercentage} unit={"%"} />
     </>
   );
 };
