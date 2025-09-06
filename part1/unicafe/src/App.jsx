@@ -72,9 +72,20 @@ const Statistics = ({ good, neutral, bad, all, avg, positivePercentage }) => {
     </p>
   );
 
+  const StatsHeader = () => <h1>Statistics</h1>;
+
+  if (all === 0) {
+    return (
+      <>
+        <StatsHeader />
+        <p>No feedback given</p>
+      </>
+    );
+  }
+
   return (
     <>
-      <h1>Statistics</h1>
+      <StatsHeader />
       <StatsContent text={"good"} value={good} />
       <StatsContent text={"neutral"} value={neutral} />
       <StatsContent text={"bad"} value={bad} />
