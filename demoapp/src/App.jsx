@@ -50,7 +50,7 @@ const App = () => {
       <CounterDisplay counter={counter} />
       {/*An event handler is supposed to be either a function (e.g. () => setCounter(0)) or a function reference, like below
       Usually defining event handlers within JSX-templates is not a good idea.*/}
-      <Button onClick={handleIncreaseByOne} text="plus" />{" "}
+      <Button onClick={handleIncreaseByOne} text="plus" />
       {/*The event handler is is passed to the Button child component via the onClick prop*/}
       <Button onClick={handleSetToZero} text="zero" />
       <Button onClick={handleDecreaseByOne} text="minus" />
