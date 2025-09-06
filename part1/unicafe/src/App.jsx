@@ -45,12 +45,6 @@ const App = () => {
     <button onClick={onClick}>{text}</button>
   );
 
-  const StatsContent = ({ text, value, unit = "" }) => (
-    <p>
-      {text} {value} {unit}
-    </p>
-  );
-
   return (
     <div>
       <h1>Give feedback</h1>
@@ -59,6 +53,27 @@ const App = () => {
       <Button onClick={handleNeutralFeedBack} text="neutral" />
       <Button onClick={handleBadFeedBack} text="bad" />
 
+      <Statistics
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        all={all}
+        avg={avg}
+        positivePercentage={positivePercentage}
+      />
+    </div>
+  );
+};
+
+const Statistics = ({ good, neutral, bad, all, avg, positivePercentage }) => {
+  const StatsContent = ({ text, value, unit = "" }) => (
+    <p>
+      {text} {value} {unit}
+    </p>
+  );
+
+  return (
+    <>
       <h1>Statistics</h1>
       <StatsContent text={"good"} value={good} />
       <StatsContent text={"neutral"} value={neutral} />
@@ -66,7 +81,7 @@ const App = () => {
       <StatsContent text={"all"} value={all} />
       <StatsContent text={"average"} value={avg} />
       <StatsContent text={"positive"} value={positivePercentage} unit={"%"} />
-    </div>
+    </>
   );
 };
 
