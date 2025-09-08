@@ -1,38 +1,27 @@
-const Header = (props) => {
-  return <h1> {props.course} </h1>;
+const Header = ({ course }) => {
+  return <h1> {course} </h1>;
 };
 
-const Content = (props) => {
+const Content = ({ parts }) => {
   return (
     <>
-      {/* {Object.values(props.parts).map((part, idx) => (
-        <Part
-          key={idx} // Each child in a list should have a unique "key" prop.
-          name={part.name}
-          exercises={part.exercises}
-        />
-      ))} */}
-
-      <Part name={props.parts[0].name} exercises={props.parts[0].exercises} />
-      <Part name={props.parts[1].name} exercises={props.parts[1].exercises} />
-      <Part name={props.parts[2].name} exercises={props.parts[2].exercises} />
+      <Part name={parts[0].name} exercises={parts[0].exercises} />
+      <Part name={parts[1].name} exercises={parts[1].exercises} />
+      <Part name={parts[2].name} exercises={parts[2].exercises} />
     </>
   );
 };
 
-const Part = (props) => {
+const Part = ({ name, exercises }) => {
   return (
     <p>
-      {props.name} {props.exercises}
+      {name} {exercises}
     </p>
   );
 };
 
-const Total = (props) => {
-  const total =
-    props.parts[0].exercises +
-    props.parts[1].exercises +
-    props.parts[2].exercises;
+const Total = ({ parts }) => {
+  const total = parts[0].exercises + parts[1].exercises + parts[2].exercises;
   return <p> Number of exercises {total} </p>;
 };
 
