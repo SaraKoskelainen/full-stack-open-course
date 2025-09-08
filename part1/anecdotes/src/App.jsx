@@ -30,7 +30,7 @@ const App = () => {
   const [votes, setVotes] = useState(initialVotes);
 
   const handleVote = () => {
-    let newVotes = [...votes];
+    const newVotes = [...votes];
     newVotes[selected] += 1;
     setVotes(newVotes);
 
