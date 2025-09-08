@@ -41,10 +41,6 @@ const App = () => {
     setAvg(newAvg);
   };
 
-  const Button = ({ onClick, text }) => (
-    <button onClick={onClick}>{text}</button>
-  );
-
   return (
     <div>
       <h1>Give feedback</h1>
@@ -65,18 +61,9 @@ const App = () => {
   );
 };
 
+const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>;
+
 const Statistics = ({ good, neutral, bad, all, avg, positivePercentage }) => {
-  const StatisticLine = ({ text, value, unit = "" }) => (
-    <tr>
-      <td>{text}</td>
-      <td>
-        {value} {unit}
-      </td>
-    </tr>
-  );
-
-  const StatsHeader = () => <h1>Statistics</h1>;
-
   if (all === 0) {
     return (
       <>
@@ -106,5 +93,16 @@ const Statistics = ({ good, neutral, bad, all, avg, positivePercentage }) => {
     </>
   );
 };
+
+const StatsHeader = () => <h1>Statistics</h1>;
+
+const StatisticLine = ({ text, value, unit = "" }) => (
+  <tr>
+    <td>{text}</td>
+    <td>
+      {value} {unit}
+    </td>
+  </tr>
+);
 
 export default App;
