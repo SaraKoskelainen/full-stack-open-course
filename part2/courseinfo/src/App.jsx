@@ -56,6 +56,10 @@ const Part = (props) => (
   </p>
 );
 
-const Total = (props) => <p>Number of exercises {props.total}</p>;
+const Total = (props) => (
+  <p>
+    <b> Total of {props.total} exercises</b>
+  </p>
+);
 
 export default App;
