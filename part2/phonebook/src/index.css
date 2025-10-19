@@ -30,8 +30,12 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3em;
   line-height: 1.1;
+}
+
+h2 {
+  padding: 0.5em 0em
 }
 
 button {
@@ -51,6 +55,14 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+form > * {
+  padding: 0.5em;
+}
+
+form {
+  padding: 0.5em 0em
 }
 
 @media (prefers-color-scheme: light) {

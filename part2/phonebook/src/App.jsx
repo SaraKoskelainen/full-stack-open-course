@@ -11,6 +11,7 @@ const App = () => {
     setPersons(persons.concat({name: newName}))
     setNewName('')
   }
+
   return (
     <div>
       <h2>Phonebook</h2>
